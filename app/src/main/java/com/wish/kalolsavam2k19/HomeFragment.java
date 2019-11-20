@@ -1,14 +1,18 @@
 package com.wish.kalolsavam2k19;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridLayout;
 
 
 /**
@@ -20,6 +24,11 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class HomeFragment extends Fragment {
+    //grid layout
+    GridLayout mainGrid;
+    Activity referenceActivity;
+    View parentHolder;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -65,8 +74,20 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+
+        //my code
+        referenceActivity=getActivity();
+        parentHolder = inflater.inflate(R.layout.fragment_home, container,
+                false);
+        mainGrid = parentHolder.findViewById(R.id.mainGrid);
+        //Set Event
+        setSingleEvent(mainGrid);
+
+
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        return parentHolder;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -106,5 +127,28 @@ public class HomeFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+
+    //grid Layout
+    private void setSingleEvent(GridLayout mainGrid) {
+        mainGrid=parentHolder.findViewById(R.id.mainGrid);
+
+        //Loop all child item of Main Grid
+
+        for (int i = 0; i < mainGrid.getChildCount(); i++) {
+            //You can see , all child item is CardView , so we just cast object to CardView
+            CardView cardView = mainGrid.getChildAt(i);
+            final int finalI = i;
+            cardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    Intent intent = new Intent(getActivity().getApplicationContext(),ActivityOne.class);
+                    intent.putExtra("info","This is activity from card item index  "+finalI);
+                    startActivity(intent);
+
+                }
+            });
+        }
     }
 }
