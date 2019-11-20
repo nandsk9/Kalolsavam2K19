@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--@drawable/intro_background-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context=".IntroSlideActivity">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/slideViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_above="@+id/dotsLayout"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentBottom="false"
+        android:layout_marginBottom="0dp"
+        android:longClickable="false"
+        android:paddingBottom="20dp"
+        android:visibility="visible">
+
+    </androidx.viewpager.widget.ViewPager>
+
+    <LinearLayout
+        android:id="@+id/dotsLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="0dp"
+        android:orientation="horizontal"></LinearLayout>
+
+    <Button
+        android:id="@+id/btn_Prev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/slideViewPager"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/custom_borderless_btn"
+        android:text="Prev"
+        android:textColor="@color/black_overlay"
+        android:visibility="invisible"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_Next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/slideViewPager"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/custom_borderless_btn"
+        android:text="Next"
+        android:textColor="@color/black_overlay"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/slideViewPager"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/custom_borderless_btn"
+        android:text="Start"
+
+        android:textColor="@color/black_overlay"
+        android:visibility="invisible"
+        android:textAllCaps="false"/>
+
+</RelativeLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="false"
+    android:layout_centerHorizontal="false">
+
+    <ImageView
+        android:id="@+id/slide_image"
+        android:layout_width="223dp"
+        android:layout_height="351dp"
+        android:layout_centerInParent="false"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="80dp"
+        app:srcCompat="@drawable/intro_slide_img1" />
+
+    <TextView
+        android:id="@+id/slide_heading"
+        android:layout_width="175dp"
+        android:layout_height="52dp"
+        android:layout_below="@+id/slide_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30sp"
+        android:text="Edit some thing here in future"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/slide_desc"
+        android:layout_width="315dp"
+        android:layout_height="51dp"
+        android:layout_below="@id/slide_heading"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="56dp"
+        android:text="More description is given here"
+        android:textSize="20sp" />
+</RelativeLayout>
